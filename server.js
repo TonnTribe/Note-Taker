@@ -36,7 +36,7 @@ app.post('/api/notes', (req, res) => {
 
 app.delete('/api/notes/:id', (req, res) => {
     const newDb = db.filter((note) => note.id !== req.params.id)
-    fs.writeFileSync('.db/db.json', JSON.stringify(newDb))
+    fs.writeFileSync('./db/db.json', JSON.stringify(newDb))
     res.json(newDb)
 });
 
